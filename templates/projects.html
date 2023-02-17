@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+        <section class="portfolio-block projects-cards">
+            <div class="container">
+                <div class="heading">
+                    <h2>Recent Work</h2>
+                </div>
+                {% if projects %}
+                <div class="row">
+                    {% for project in projects %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0"><a href="{{ project.url }}"><img class="card-img-top scale-on-hover" src="{{ project.image.url }}" alt="Card Image"></a>
+                            <div class="card-body">
+                                <h6><a href="{{ project.url }}">{{ project.title }}</a></h6>
+                                <p class="text-muted card-text">{{ project.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    <p class="text-center h3">No projects found</p>
+                {% endif %}
+            </div>
+        </section>
+{% endblock %}
