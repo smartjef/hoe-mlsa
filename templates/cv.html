@@ -47,18 +47,16 @@
                         <div class="col-md-6">
                             <div class="skills portfolio-info-card">
                                 <h2>Skills</h2>
-                                <h3>HTML</h3>
-                                <div class="progress">
-                                    <div class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="visually-hidden">100%</span></div>
-                                </div>
-                                <h3>PHP</h3>
-                                <div class="progress">
-                                    <div class="progress-bar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"><span class="visually-hidden">90%</span></div>
-                                </div>
-                                <h3>JavaScript</h3>
-                                <div class="progress">
-                                    <div class="progress-bar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"><span class="visually-hidden">80%</span></div>
-                                </div>
+                                {% if skills %}
+                                {% for skill in skills %}
+                                    <h3>{{ skill.title }}<sup>({{ skill.level }}%)</sup></h3>
+                                    <div class="progress">
+                                        <div class="progress-bar" aria-valuenow="{{ skill.level }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ skill.level }}%;"><span class="visually-hidden">{{ skill.level }}%</span></div>
+                                    </div>
+                                {% endfor %}
+                                {% else %}
+                                    <p class="text-center h3">No skills found</p>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -66,19 +64,19 @@
                                 <h2>Contact Info</h2>
                                 <div class="row">
                                     <div class="col-1"><i class="icon ion-android-calendar icon"></i></div>
-                                    <div class="col-9"><span>10/10/1990</span></div>
+                                    <div class="col-9"><span>20/08/1998</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1"><i class="icon ion-person icon"></i></div>
-                                    <div class="col-9"><span>John Smith</span></div>
+                                    <div class="col-9"><span>Jeff Odhiambo</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1"><i class="icon ion-ios-telephone icon"></i></div>
-                                    <div class="col-9"><span>+235 3217 424</span></div>
+                                    <div class="col-9"><span>+254795067776</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-1"><i class="icon ion-at icon"></i></div>
-                                    <div class="col-9"><span>lorem@email.com</span></div>
+                                    <div class="col-9"><span>o.jeff3.a@gmail.com</span></div>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +86,14 @@
                     <div class="heading">
                         <h2 class="text-center">Hobbies</h2>
                     </div>
-                    <p class="text-center text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras risus ligula, iaculis ut metus sit amet, luctus pharetra mauris. Aliquam purus felis, pretium vel pretium vitae, dapibus sodales ante. Suspendisse potenti. Duis nunc eros.</p>
+                    <p class="text-center text-muted">
+                        {% if hobbies %}
+                            {% for hobby in hobbies %}
+                                {{ hobby.title }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            No hobbies found
+                        {% endif %}
                 </div>
             </div>
         </section>

@@ -37,4 +37,34 @@ class Education(models.Model):
     def __str__(self):
         return self.title
 
+class Skill(models.Model):
+    title = models.CharField(max_length=100)
+    level = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['-level']
     
+class Hobby(models.Model):
+    title = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['title']
+        verbose_name_plural = 'Hobbies'
+
+class Contact(models.Model):
+    subject = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+
+    def __str__(self):
+        return self.subject
+
+    class Meta:
+        verbose_name_plural = 'Contacts'
+        

@@ -12,6 +12,16 @@
     {% include 'components/navbar.html' %}
 
     <main class="page lanidng-page">
+        {% if messages %}
+            {% for message in messages %}
+            <div class="container px-5 my-3">
+                <div class="alert alert-{{ message.tags }} alert-sm alert-dismissible fade show custom-alert"
+                    role="alert">
+                    <strong>{{ message }}</strong>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
         {% include 'components/hero-section.html' %}
         {% block content %}
 

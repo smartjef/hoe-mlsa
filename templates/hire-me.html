@@ -5,20 +5,16 @@
                 <div class="heading">
                     <h2>Hire Me</h2>
                 </div>
-                <form>
-                    <div class="mb-3"><label class="form-label" for="subject">Subject</label><select class="form-select" id="subject">
-                            <optgroup label="This is a group">
-                                <option value="12" selected="">This is item 1</option>
-                                <option value="13">This is item 2</option>
-                                <option value="14">This is item 3</option>
-                            </optgroup>
-                        </select></div>
-                    <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control" type="email" id="email"></div>
-                    <div class="mb-3"><label class="form-label" for="message">Message</label><textarea class="form-control" id="message"></textarea></div>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3"><label class="form-label" for="subject">Subject</label>
+                        <input required type="text" name="subject" class="form-control">
+                    </div>
+                    <div class="mb-3"><label class="form-label" for="email">Email</label><input name="email" required class="form-control" type="email" id="email"></div>
+                    <div class="mb-3"><label class="form-label" for="message">Message</label><textarea name="message" class="form-control" id="message" required></textarea></div>
                     <div class="mb-3">
                         <div class="row">
-                            <div class="col-md-6"><label class="form-label" for="hire-date">Date</label><input class="form-control" id="hire-date" type="date"></div>
-                            <div class="col-md-6 button"><button class="btn btn-primary d-block w-100" type="submit">Hire Me</button></div>
+                            <div class="col-md-12 button"><button class="btn btn-primary d-block w-100" type="submit">Hire Me</button></div>
                         </div>
                     </div>
                 </form>
