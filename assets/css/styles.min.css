@@ -495,10 +495,10 @@
 }
 
 .img-self {
-    height: 20%;
+    height: 200px;
     width: 100px;
     text-align: center;
     border-radius: 50%;
-    width: 28%;
+    width: 20%;
     border: round;
 }
