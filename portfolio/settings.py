@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.56.1']
 
-TEMPLATES_DIRS =os.path.join[BASE_DIR, 'templates']
+TEMPLATES_DIRS = os.path.join[BASE_DIR, 'templates']
 # Application definition
 
 INSTALLED_APPS = [
