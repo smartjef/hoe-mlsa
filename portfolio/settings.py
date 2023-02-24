@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-kjc&n)#8y+yrenb6ipnl161^&+zfxt5)+p^37+zwzxl!@ccfw5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.56.1']
 
 TEMPLATES_DIRS =os.path.join[BASE_DIR, 'templates']
 # Application definition
