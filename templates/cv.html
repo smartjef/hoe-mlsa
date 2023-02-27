@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+        <section class="portfolio-block cv">
+            <div class="container">
+                <div class="work-experience group">
+                    <div class="heading">
+                        <h2 class="text-center">Work Experience</h2>
+                    </div>
+                    {% if works %}
+                        {% for work in works %}
+                             <div class="item">
+                                <div class="row">
+                                     <div class="col-md-6">
+                                        <h3>{{ work.title }}</h3>
+                                        <h4 class="organization">{{ work.company }}</h4>
+                                    </div>
+                                    <div class="col-md-6"><span class="period">{{ work.start_date }} - {{ work.end_date }}</span></div>
+                                </div>
+                                <p class="text-muted">{{ work.description|linebreaks }}</p>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="education group">
+                    <div class="heading">
+                        <h2 class="text-center">Education</h2>
+                    </div>
+                    {% if education %}
+                        {% for edu in education %}
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3>{{ edu.education_level }}</h3>
+                                        <h4 class="organization">{{ edu.title }}</h4>
+                                    </div>
+                                    <div class="col-6"><span class="period">{{ edu.start_date }} - {% if edu.end_date %}{{ edu.end_date }}{% else %}Present{% endif %}</span></div>
+                                </div>
+                                <p class="text-muted">{{ edu.description|linebreaks }}</p>
+                            </div>
+                        {% endfor %}
+                        {% else %}
+                        <p class="text-center h3">No education found</p>
+                    {% endif %}
+                </div>
+                <div class="group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skills portfolio-info-card">
+                                <h2>Skills</h2>
+                                {% if skill %}
+                                    {% for skill in skills %}
+                                        <h3>{{ skill.title }}<sup>(% {{ skill.level }} %)</sup></h3>
+                                        <div class="progress">
+                                            <div class="progress-bar" aria-valuenow="{{ skill.level }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ skill.level }}%;"><span class="visually-hidden">{{ skill.level }}%</span></div>
+                                            </div>
+                                    {% endfor %}
+                                        {% else %}
+                                            <p class="text-center h3">No skills found</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-info portfolio-info-card">
+                                <h2>Contact Info</h2>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-android-calendar icon"></i></div>
+                                    <div class="col-9"><span>09/09/2000</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-person icon"></i></div>
+                                    <div class="col-9"><span>Kevin Kipyegon</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-ios-telephone icon"></i></div>
+                                    <div class="col-9"><span>+254 707 622 457</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-at icon"></i></div>
+                                    <div class="col-9"><span>kevin.soy@yahoo.com </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hobbies group">
+                    <div class="heading">
+                        <h2 class="text-center">Hobbies</h2>
+                    </div>
+                    <p class="text-center text-muted">
+                        {% if hobby %}
+                        {% for hobby in hobbies %}
+                        {{ hobby.title}}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                        {% else %}
+                        No hobbies found
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </section>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}.
+{% load static %}
+{% block content %}
+        <section class="portfolio-block photography">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static 'assets/img/nature/image5.jpg' %}"></a></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static 'assets/img/nature/image2.jpg' %}"></a></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static 'assets/img/tech/image4.jpg' %}"></a></div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-block call-to-action border-bottom">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center content">
+                    <h3>Like what you see?</h3><button class="btn btn-outline-primary btn-lg" type="button">Hire me</button>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-block skills">
+            <div class="container">
+                <div class="heading">
+                    <h2>Special Skills</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card special-skill-item border-0">
+                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-star-outline"></i></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Software Engeneering</h3>
+                                <p class="card-text">I design or reengineer softwares, some of my projects are on software reengineering on dairy farming.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card special-skill-item border-0">
+                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-lightbulb-outline"></i></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Interface and Web Design</h3>
+                                <p class="card-text">Example of this is this website I specifically code it from scratch.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card special-skill-item border-0">
+                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-gear-outline"></i></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Photography and Print</h3>
+                                <p class="card-text">I also love photography.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <section class="portfolio-block website gradient">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 col-lg-5 offset-lg-1 text">
+                    <h3>Website Project</h3>
+                    <p>This website gives some information about myself and any recomendation can be made through the contact me buttonb.</p>
+                </div>
+                <div class="col-md-12 col-lg-5">
+                    <div class="portfolio-laptop-mockup">
+                        <div class="screen">
+                            <div class="screen-content" style="background-image: url(&quot;/static/assets/img/tech/image6.png&quot;);"></div>
+                        </div>
+                        <div class="keyboard"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+   {% endblock %}

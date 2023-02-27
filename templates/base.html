@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Kevin's Portfolio - {{ title }}</title>
+    {% include 'components/css.html' %}
+</head>
+
+<body>
+    {% include 'components/navbar.html' %}
+    <main class="page lanidng-page">
+        {% include 'components/hero-section.html' %}
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    {% include 'components/footer.html' %}
+    {% include 'components/js.html' %}
+   
+</body>
+
+</html>
